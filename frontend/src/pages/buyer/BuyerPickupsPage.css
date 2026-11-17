@@ -1,0 +1,128 @@
+/* BuyerPickupsPage.css */
+
+/* ── Header ── */
+.bpu-header { margin-bottom: var(--space-5); }
+.bpu-title { font-size: var(--text-2xl); font-weight: 800; color: var(--agri-text); letter-spacing: -0.02em; }
+.bpu-sub { font-size: var(--text-sm); color: var(--agri-muted); margin-top: 2px; }
+
+/* ── Stats ── */
+.bpu-stats {
+  display: grid; grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-4); margin-bottom: var(--space-5);
+}
+.bpu-stat {
+  display: flex; align-items: center; gap: var(--space-3);
+  padding: var(--space-4); background: var(--agri-card);
+  border-radius: var(--radius-card); border: 1px solid var(--agri-border-light);
+  box-shadow: var(--shadow-sm);
+  transition: transform var(--transition-base), box-shadow var(--transition-base);
+}
+.bpu-stat:hover { transform: translateY(-2px); box-shadow: var(--shadow-md); }
+
+/* Stat icon bubbles */
+.bpu-stat-icon {
+  width: 44px; height: 44px; border-radius: var(--radius-md);
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+  transition: transform var(--transition-spring);
+}
+.bpu-stat:hover .bpu-stat-icon { transform: scale(1.1) rotate(-3deg); }
+.bpu-blue   .bpu-stat-icon { background: var(--agri-info-light);  color: var(--agri-info); }
+.bpu-success.bpu-stat .bpu-stat-icon { background: var(--agri-success-light); color: var(--agri-success); }
+.bpu-muted  .bpu-stat-icon { background: var(--agri-sage); color: var(--agri-muted); }
+
+/* Legacy SVG color fallbacks */
+.bpu-blue svg   { color: var(--agri-info); }
+.bpu-success svg{ color: var(--agri-success); }
+.bpu-muted svg  { color: var(--agri-muted); }
+
+.bpu-stat-info { display: flex; flex-direction: column; gap: 2px; }
+.bpu-stat-val { font-size: var(--text-xl); font-weight: 800; color: var(--agri-text); line-height: 1; font-family: var(--font-display); }
+.bpu-stat-lbl { font-size: var(--text-xs); color: var(--agri-muted); }
+
+/* ── Demo notice ── */
+.bpu-demo {
+  display: flex; align-items: center; gap: var(--space-2);
+  padding: var(--space-2) var(--space-4);
+  background: var(--agri-amber-light); border-radius: var(--radius-md);
+  font-size: var(--text-xs); color: var(--agri-amber-dark);
+  border: 1px solid rgba(217,119,6,0.2);
+  margin-bottom: var(--space-4);
+}
+
+/* ── Pickup list ── */
+.bpu-list { display: flex; flex-direction: column; gap: var(--space-5); }
+.bpu-card {
+  display: flex; flex-direction: column; gap: var(--space-5);
+  transition: box-shadow var(--transition-base);
+}
+.bpu-card:hover { box-shadow: var(--shadow-md) !important; }
+
+.bpu-card-header {
+  display: flex; align-items: flex-start;
+  justify-content: space-between; gap: var(--space-4); flex-wrap: wrap;
+}
+.bpu-card-left { display: flex; gap: var(--space-3); align-items: flex-start; }
+.bpu-emoji {
+  font-size: 1.75rem; width: 48px; height: 48px;
+  display: flex; align-items: center; justify-content: center;
+  background: var(--agri-green-muted); border-radius: var(--radius-md); flex-shrink: 0;
+  border: 1px solid rgba(4,120,87,0.15);
+  transition: transform var(--transition-spring);
+}
+.bpu-card:hover .bpu-emoji { transform: scale(1.08) rotate(-3deg); }
+
+.bpu-id-row { display: flex; align-items: center; gap: var(--space-2); margin-bottom: 2px; }
+.bpu-id { font-size: var(--text-xs); font-family: var(--font-mono); color: var(--agri-muted); }
+.bpu-crop { font-size: var(--text-lg); font-weight: 800; color: var(--agri-text); letter-spacing: -0.02em; }
+.bpu-farmer { font-size: var(--text-sm); color: var(--agri-muted); }
+
+.bpu-meta { display: flex; flex-direction: column; gap: var(--space-2); align-items: flex-end; }
+.bpu-meta-item {
+  display: flex; align-items: center; gap: 6px;
+  font-size: var(--text-xs); color: var(--agri-muted);
+}
+.bpu-meta-item svg { color: var(--agri-green); }
+
+/* ── Timeline ── */
+.bpu-timeline {
+  display: flex; gap: var(--space-2);
+  padding: var(--space-4); background: var(--agri-page);
+  border-radius: var(--radius-md); border: 1px solid var(--agri-border-light);
+}
+.bpu-step { display: flex; gap: var(--space-3); flex: 1; }
+.bpu-step-col { display: flex; flex-direction: column; align-items: center; }
+.bpu-dot {
+  width: 22px; height: 22px; border-radius: 50%;
+  border: 2px solid var(--agri-border); background: #fff;
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0; transition: all var(--transition-base);
+}
+.bpu-dot.done { background: var(--agri-success); border-color: var(--agri-success); color: #fff; }
+.bpu-dot.current {
+  border-color: var(--agri-green); background: var(--agri-green-muted);
+  animation: dotPulse 2s ease-in-out infinite;
+}
+@keyframes dotPulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(4,120,87,0.4); }
+  50%       { box-shadow: 0 0 0 5px rgba(4,120,87,0); }
+}
+.bpu-line { width: 2px; flex: 1; background: var(--agri-border); margin: 4px 0; min-height: 20px; }
+.bpu-line.done { background: var(--agri-success); }
+.bpu-step-label { font-size: var(--text-xs); font-weight: 600; color: var(--agri-muted); }
+.bpu-step-label.done { color: var(--agri-text); }
+.bpu-step-time { font-size: 11px; color: var(--agri-muted); margin-top: 2px; }
+
+/* ── Info notice ── */
+.bpu-notice {
+  display: flex; align-items: center; gap: var(--space-2);
+  padding: var(--space-2) var(--space-3);
+  background: var(--agri-info-light); border-radius: var(--radius-sm);
+  font-size: var(--text-xs); color: var(--agri-info);
+  border-left: 3px solid var(--agri-info);
+}
+
+@media (max-width: 768px) {
+  .bpu-stats    { grid-template-columns: 1fr; }
+  .bpu-timeline { flex-direction: column; }
+}

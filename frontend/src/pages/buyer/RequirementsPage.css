@@ -1,0 +1,128 @@
+/* RequirementsPage.css */
+
+/* ── Header ── */
+.req-page-header {
+  display: flex; align-items: flex-start; justify-content: space-between;
+  gap: var(--space-4); flex-wrap: wrap; margin-bottom: var(--space-5);
+}
+.req-page-title {
+  font-size: var(--text-2xl); font-weight: 800;
+  color: var(--agri-text); letter-spacing: -0.02em;
+}
+.req-page-sub { font-size: var(--text-sm); color: var(--agri-muted); margin-top: 2px; }
+
+/* ── How it works ── */
+.how-it-works { margin-bottom: var(--space-5) !important; }
+.hiw-steps { display: flex; align-items: center; gap: var(--space-4); flex-wrap: wrap; }
+.hiw-step { display: flex; align-items: center; gap: var(--space-2); }
+.hiw-num {
+  width: 30px; height: 30px; border-radius: 50%;
+  background: var(--agri-green-muted); color: var(--agri-green);
+  border: 2px solid rgba(4,120,87,0.25);
+  display: flex; align-items: center; justify-content: center;
+  font-size: var(--text-xs); font-weight: 800; flex-shrink: 0;
+  transition: all var(--transition-base);
+}
+.hiw-step:hover .hiw-num {
+  background: var(--agri-green); color: #fff; border-color: var(--agri-green);
+}
+.hiw-label { font-size: var(--text-sm); color: var(--agri-text-secondary); font-weight: 500; }
+.hiw-step:not(:last-child)::after {
+  content: '→'; margin-left: var(--space-3);
+  color: var(--agri-muted); font-size: var(--text-sm);
+}
+
+/* ── Form card ── */
+.req-form-card { margin-bottom: var(--space-5); }
+.req-form-title {
+  font-size: var(--text-lg); font-weight: 700;
+  color: var(--agri-text); margin-bottom: var(--space-4);
+}
+.req-form-grid {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: var(--space-4); margin-bottom: var(--space-4);
+}
+.req-form-footer {
+  display: flex; align-items: center; justify-content: space-between;
+  gap: var(--space-4); flex-wrap: wrap; margin-top: var(--space-4);
+}
+.req-form-notice {
+  display: flex; align-items: center; gap: var(--space-2);
+  font-size: var(--text-xs); color: var(--agri-info);
+}
+
+/* ── Success banner ── */
+.req-submitted-banner {
+  display: flex; align-items: center; gap: var(--space-3);
+  padding: var(--space-4); background: var(--agri-success-light);
+  border: 1px solid #bbf7d0; border-radius: var(--radius-md);
+  font-size: var(--text-sm); color: var(--agri-success);
+  margin-bottom: var(--space-4);
+  animation: slideInDown 0.35s ease;
+}
+@keyframes slideInDown {
+  from { opacity: 0; transform: translateY(-8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ── Demo notice ── */
+.req-demo-notice {
+  display: flex; align-items: center; gap: var(--space-2);
+  padding: var(--space-2) var(--space-4);
+  background: var(--agri-amber-light); border-radius: var(--radius-md);
+  font-size: var(--text-xs); color: var(--agri-amber-dark);
+  border: 1px solid rgba(217,119,6,0.2);
+  margin-bottom: var(--space-4);
+}
+
+/* ── Posted list ── */
+.req-section-title {
+  font-size: var(--text-lg); font-weight: 700;
+  color: var(--agri-text); margin-bottom: var(--space-4);
+}
+.req-posted-list { display: flex; flex-direction: column; gap: var(--space-4); }
+.req-posted-card {
+  display: flex; flex-direction: column; gap: var(--space-3);
+  transition: box-shadow var(--transition-base);
+}
+.req-posted-card:hover { box-shadow: var(--shadow-md) !important; }
+.req-posted-top {
+  display: flex; align-items: flex-start;
+  justify-content: space-between; gap: var(--space-3);
+}
+.req-posted-id-row { display: flex; align-items: center; gap: var(--space-2); margin-bottom: 2px; }
+.req-posted-id {
+  font-size: var(--text-xs); font-family: var(--font-mono);
+  color: var(--agri-muted); letter-spacing: 0.02em;
+}
+.req-posted-crop {
+  font-size: var(--text-lg); font-weight: 800;
+  color: var(--agri-text); letter-spacing: -0.02em;
+}
+.req-posted-purpose { font-size: var(--text-sm); color: var(--agri-muted); }
+
+.req-posted-details {
+  display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: var(--space-3); padding: var(--space-3) var(--space-4);
+  background: var(--agri-page); border-radius: var(--radius-md);
+  border: 1px solid var(--agri-border-light);
+}
+.rpd-item { display: flex; flex-direction: column; gap: 2px; }
+.rpd-label {
+  font-size: 10px; color: var(--agri-muted);
+  text-transform: uppercase; letter-spacing: 0.06em; font-weight: 700;
+}
+.rpd-val { font-size: var(--text-sm); font-weight: 600; color: var(--agri-text); }
+.rpd-budget { color: var(--agri-green); }
+
+.req-posted-footer {
+  display: flex; align-items: center; justify-content: space-between;
+  padding-top: var(--space-3); border-top: 1px solid var(--agri-border-light);
+}
+.req-posted-date { font-size: var(--text-xs); color: var(--agri-muted); }
+.req-posted-responses { font-size: var(--text-xs); font-weight: 600; color: var(--agri-info); }
+
+@media (max-width: 768px) {
+  .req-form-grid  { grid-template-columns: 1fr; }
+  .hiw-steps      { gap: var(--space-2); }
+}

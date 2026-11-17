@@ -1,0 +1,129 @@
+/* SuppliersPage.css */
+
+/* ── Header ── */
+.sup-header { margin-bottom: var(--space-5); }
+.sup-title { font-size: var(--text-2xl); font-weight: 800; color: var(--agri-text); letter-spacing: -0.02em; }
+.sup-sub { font-size: var(--text-sm); color: var(--agri-muted); margin-top: 2px; }
+
+/* ── Stats ── */
+.sup-stats {
+  display: grid; grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-4); margin-bottom: var(--space-5);
+}
+.sup-stat {
+  display: flex; align-items: center; gap: var(--space-3);
+  padding: var(--space-4); background: var(--agri-card);
+  border-radius: var(--radius-card); border: 1px solid var(--agri-border-light);
+  box-shadow: var(--shadow-sm);
+  transition: transform var(--transition-base), box-shadow var(--transition-base);
+}
+.sup-stat:hover { transform: translateY(-2px); box-shadow: var(--shadow-md); }
+
+/* Stat icon bubble */
+.sup-stat-icon {
+  width: 44px; height: 44px; border-radius: var(--radius-md);
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+  transition: transform var(--transition-spring);
+}
+.sup-stat:hover .sup-stat-icon { transform: scale(1.1) rotate(-3deg); }
+.sup-stat-green .sup-stat-icon { background: var(--agri-green-muted); color: var(--agri-green); }
+.sup-stat-blue  .sup-stat-icon { background: var(--agri-info-light);  color: var(--agri-info);  }
+.sup-stat-amber .sup-stat-icon { background: var(--agri-amber-muted); color: var(--agri-amber); }
+
+.sup-stat-info { display: flex; flex-direction: column; gap: 2px; }
+.sup-stat-val { font-size: var(--text-xl); font-weight: 800; color: var(--agri-text); line-height: 1; font-family: var(--font-display); }
+.sup-stat-lbl { font-size: var(--text-xs); color: var(--agri-muted); }
+
+/* ── Search ── */
+.sup-search-wrap { position: relative; }
+.sup-search-icon {
+  position: absolute; left: 12px; top: 50%;
+  transform: translateY(-50%); color: var(--agri-muted); pointer-events: none;
+  transition: color var(--transition-fast);
+}
+.sup-search-input {
+  width: 100%; padding: 10px 12px 10px 36px;
+  border: 1px solid var(--agri-border); border-radius: var(--radius-md);
+  background: var(--agri-page); font-size: var(--text-sm); color: var(--agri-text);
+  transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+}
+.sup-search-input:hover { border-color: var(--agri-border-hover); }
+.sup-search-input:focus {
+  outline: none; border-color: var(--agri-green);
+  box-shadow: 0 0 0 3px rgba(4,120,87,0.1);
+}
+.sup-search-wrap:focus-within .sup-search-icon { color: var(--agri-green); }
+
+/* ── Supplier grid ── */
+.sup-grid {
+  display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: var(--space-5); margin-top: var(--space-5);
+}
+
+.sup-card {
+  display: flex; flex-direction: column; gap: var(--space-3);
+  transition: box-shadow var(--transition-base), transform var(--transition-base);
+}
+.sup-card:hover { box-shadow: var(--shadow-md) !important; transform: translateY(-2px); }
+
+.sup-card-top { display: flex; align-items: flex-start; gap: var(--space-3); }
+.sup-avatar {
+  position: relative; width: 50px; height: 50px; border-radius: 50%;
+  background: linear-gradient(135deg, var(--agri-green), var(--agri-forest));
+  color: #fff; display: flex; align-items: center; justify-content: center;
+  font-weight: 800; font-size: var(--text-lg); flex-shrink: 0;
+  box-shadow: 0 2px 8px rgba(4,120,87,0.25);
+  transition: transform var(--transition-spring);
+}
+.sup-card:hover .sup-avatar { transform: scale(1.05); }
+.sup-verified-badge {
+  position: absolute; bottom: -2px; right: -2px;
+  width: 18px; height: 18px; border-radius: 50%;
+  background: var(--agri-info); color: #fff;
+  font-size: 10px; font-weight: 700;
+  display: flex; align-items: center; justify-content: center;
+  border: 2px solid #fff;
+}
+.sup-info { flex: 1; min-width: 0; }
+.sup-name { font-size: var(--text-base); font-weight: 700; color: var(--agri-text); margin-bottom: 2px; }
+.sup-loc {
+  font-size: var(--text-xs); color: var(--agri-muted);
+  display: flex; align-items: center; gap: 4px; margin-bottom: var(--space-1);
+}
+.sup-rating {
+  display: flex; align-items: center; gap: 4px;
+  font-size: var(--text-xs); font-weight: 600; color: var(--agri-text);
+}
+.sup-sales { font-weight: 400; color: var(--agri-muted); }
+
+.sup-save-btn {
+  background: none; border: none; cursor: pointer;
+  padding: 6px; border-radius: var(--radius-sm);
+  transition: background var(--transition-fast), color var(--transition-fast);
+  flex-shrink: 0; color: var(--agri-muted);
+}
+.sup-save-btn:hover { background: var(--agri-sage); color: var(--agri-amber); }
+.sup-save-btn.saved { background: #fef3c7; color: var(--agri-amber); }
+
+.sup-crops { display: flex; gap: var(--space-2); flex-wrap: wrap; }
+
+.sup-footer {
+  display: flex; align-items: center; justify-content: space-between;
+  padding-top: var(--space-3); border-top: 1px solid var(--agri-border-light);
+}
+.sup-last-active { font-size: var(--text-xs); color: var(--agri-muted); }
+.sup-actions { display: flex; gap: var(--space-2); }
+
+/* ── Empty state ── */
+.sup-empty {
+  text-align: center; padding: var(--space-10);
+  display: flex; flex-direction: column; align-items: center; gap: var(--space-3);
+  color: var(--agri-muted);
+}
+.sup-empty h3 { font-size: var(--text-xl); color: var(--agri-text); }
+
+@media (max-width: 768px) {
+  .sup-stats { grid-template-columns: 1fr; }
+  .sup-grid  { grid-template-columns: 1fr; }
+}

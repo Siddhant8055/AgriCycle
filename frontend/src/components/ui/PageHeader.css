@@ -1,0 +1,95 @@
+/* ============================================================
+   PageHeader — AgriCycle
+   ============================================================ */
+
+.page-header {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+/* Breadcrumb */
+.page-breadcrumb-list {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  list-style: none;
+  flex-wrap: wrap;
+}
+
+.page-breadcrumb-item {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.page-breadcrumb-link {
+  font-size: var(--text-xs);
+  font-weight: 500;
+  color: var(--agri-muted);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+.page-breadcrumb-link:hover {
+  color: var(--agri-green);
+}
+
+.page-breadcrumb-sep {
+  color: var(--agri-border);
+  flex-shrink: 0;
+}
+
+.page-breadcrumb-current {
+  font-size: var(--text-xs);
+  font-weight: 500;
+  color: var(--agri-muted);
+}
+.page-breadcrumb-current.active {
+  color: var(--agri-text-secondary);
+  font-weight: 600;
+}
+
+/* Title row */
+.page-header-row {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--space-4);
+  flex-wrap: wrap;
+}
+
+.page-header-text {
+  flex: 1;
+  min-width: 0;
+}
+
+.page-header-title {
+  font-size: var(--text-2xl);
+  font-weight: 800;
+  color: var(--agri-text);
+  letter-spacing: -0.03em;
+  line-height: var(--leading-tight);
+  margin: 0;
+}
+
+.page-header-subtitle {
+  font-size: var(--text-sm);
+  color: var(--agri-muted);
+  margin-top: 4px;
+  line-height: var(--leading-normal);
+}
+
+.page-header-actions {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  flex-shrink: 0;
+  flex-wrap: wrap;
+}
+
+/* ── Responsive ── */
+@media (max-width: 640px) {
+  .page-header-row   { flex-direction: column; }
+  .page-header-title { font-size: var(--text-xl); }
+  .page-header-actions { width: 100%; }
+}

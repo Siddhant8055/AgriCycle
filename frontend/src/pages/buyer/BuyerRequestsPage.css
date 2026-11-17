@@ -1,0 +1,124 @@
+/* BuyerRequestsPage.css */
+
+/* ── Header ── */
+.breq-header {
+  display: flex; align-items: flex-start; justify-content: space-between;
+  gap: var(--space-4); flex-wrap: wrap; margin-bottom: var(--space-5);
+}
+.breq-title { font-size: var(--text-2xl); font-weight: 800; color: var(--agri-text); letter-spacing: -0.02em; }
+.breq-sub { font-size: var(--text-sm); color: var(--agri-muted); margin-top: 2px; }
+
+/* ── Stats grid ── */
+.breq-stats {
+  display: grid; grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-4); margin-bottom: var(--space-5);
+}
+.breq-stat-card {
+  position: relative; overflow: hidden;
+  text-align: center; padding: var(--space-5) var(--space-4);
+  background: var(--agri-card);
+  border-radius: var(--radius-card); border: 1px solid var(--agri-border-light);
+  box-shadow: var(--shadow-sm); border-top: 3px solid var(--stat-color);
+  transition: transform var(--transition-base), box-shadow var(--transition-base);
+}
+.breq-stat-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+/* Stat icon bubble */
+.breq-stat-icon {
+  width: 40px; height: 40px; border-radius: var(--radius-md);
+  display: flex; align-items: center; justify-content: center;
+  margin: 0 auto var(--space-2);
+  background: var(--agri-green-muted); color: var(--agri-green);
+}
+.breq-stat-blue .breq-stat-icon  { background: var(--agri-info-light); color: var(--agri-info); }
+.breq-stat-amber .breq-stat-icon { background: var(--agri-amber-muted); color: var(--agri-amber); }
+.breq-stat-green .breq-stat-icon { background: var(--agri-green-muted); color: var(--agri-green); }
+.breq-stat-muted .breq-stat-icon { background: var(--agri-sage); color: var(--agri-muted); }
+
+.breq-stat-value { font-size: var(--text-2xl); font-weight: 800; color: var(--stat-color); font-family: var(--font-display); }
+.breq-stat-label { font-size: var(--text-xs); color: var(--agri-muted); margin-top: 2px; }
+
+/* ── Demo notice ── */
+.breq-demo-notice {
+  display: flex; align-items: center; gap: var(--space-2);
+  padding: var(--space-2) var(--space-4);
+  background: var(--agri-amber-light); border-radius: var(--radius-md);
+  font-size: var(--text-xs); color: var(--agri-amber-dark); margin-bottom: var(--space-3);
+  border: 1px solid rgba(217,119,6,0.2);
+}
+
+/* ── Filter row ── */
+.breq-filter-row { display: flex; align-items: center; gap: var(--space-3); flex-wrap: wrap; }
+.breq-count { font-size: var(--text-sm); color: var(--agri-muted); margin-left: auto; }
+
+/* ── Request list ── */
+.breq-list { display: flex; flex-direction: column; gap: var(--space-4); margin-top: var(--space-4); }
+.breq-card {
+  display: flex; flex-direction: column; gap: var(--space-3);
+  transition: box-shadow var(--transition-base);
+}
+.breq-card:hover { box-shadow: var(--shadow-md) !important; }
+.breq-card-top {
+  display: flex; align-items: flex-start;
+  justify-content: space-between; gap: var(--space-3);
+}
+.breq-card-left { display: flex; gap: var(--space-3); align-items: flex-start; }
+.breq-emoji {
+  font-size: 1.75rem; width: 48px; height: 48px;
+  display: flex; align-items: center; justify-content: center;
+  background: var(--agri-green-muted); border-radius: var(--radius-md);
+  flex-shrink: 0; border: 1px solid rgba(4,120,87,0.15);
+  transition: transform var(--transition-spring);
+}
+.breq-card:hover .breq-emoji { transform: scale(1.08) rotate(-3deg); }
+
+.breq-id-row { display: flex; align-items: center; gap: var(--space-2); margin-bottom: 2px; }
+.breq-id {
+  font-size: var(--text-xs); font-family: var(--font-mono);
+  color: var(--agri-muted); letter-spacing: 0.02em;
+}
+.breq-crop { font-size: var(--text-base); font-weight: 700; color: var(--agri-text); }
+.breq-farmer { font-size: var(--text-xs); color: var(--agri-muted); }
+
+/* ── Detail strip ── */
+.breq-details {
+  display: flex; gap: var(--space-5); flex-wrap: wrap;
+  padding: var(--space-3) var(--space-4);
+  background: var(--agri-page); border-radius: var(--radius-md);
+  border: 1px solid var(--agri-border-light);
+}
+.breq-det-item { display: flex; flex-direction: column; gap: 2px; }
+.breq-det-label {
+  font-size: 10px; color: var(--agri-muted);
+  text-transform: uppercase; letter-spacing: 0.06em; font-weight: 700;
+}
+.breq-det-value { font-size: var(--text-sm); font-weight: 600; color: var(--agri-text); }
+.breq-offer { color: var(--agri-green); }
+
+/* ── Message ── */
+.breq-message {
+  display: flex; align-items: flex-start; gap: 6px;
+  font-size: var(--text-xs); color: var(--agri-info); font-style: italic;
+  padding: 8px 12px;
+  background: var(--agri-info-light); border-radius: var(--radius-sm);
+  border-left: 3px solid var(--agri-info);
+}
+
+/* ── Status footer ── */
+.breq-status-footer { padding-top: var(--space-3); border-top: 1px solid var(--agri-border-light); }
+.breq-status-note {
+  display: inline-flex; align-items: center; gap: 6px;
+  font-size: var(--text-xs); font-weight: 600;
+  padding: 4px 12px; border-radius: var(--radius-full);
+}
+.breq-status-note.pending  { background: var(--agri-amber-light); color: var(--agri-amber-dark); }
+.breq-status-note.accepted { background: var(--agri-success-light); color: var(--agri-success); }
+.breq-status-note.completed{ background: var(--agri-info-light); color: var(--agri-info); }
+.breq-status-note.declined { background: #fef2f2; color: var(--agri-danger); }
+
+@media (max-width: 768px) {
+  .breq-stats  { grid-template-columns: 1fr 1fr; }
+  .breq-details{ gap: var(--space-3); }
+}

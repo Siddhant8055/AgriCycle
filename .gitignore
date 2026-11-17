@@ -1,0 +1,176 @@
+# ==========================================
+# AGRICYCLE - FULL STACK PROJECT
+# Technology-independent configuration
+# ==========================================
+
+
+# ==========================================
+# 1. DEPENDENCIES
+# ==========================================
+
+node_modules/
+**/node_modules/
+
+vendor/
+**/vendor/
+
+packages/
+
+
+# ==========================================
+# 2. BUILD OUTPUTS & GENERATED FILES
+# ==========================================
+
+dist/
+**/dist/
+
+build/
+**/build/
+
+out/
+**/out/
+
+coverage/
+.nyc_output/
+
+.cache/
+.parcel-cache/
+.turbo/
+.vite/
+
+
+# ==========================================
+# 3. ENVIRONMENT VARIABLES & SECRETS
+# ==========================================
+
+.env
+.env.*
+!.env.example
+!.env.sample
+
+**/.env
+**/.env.*
+!**/.env.example
+!**/.env.sample
+
+secrets/
+credentials/
+
+*.pem
+*.key
+*.p12
+*.pfx
+*.keystore
+
+
+# ==========================================
+# 4. LOGS & TEMPORARY FILES
+# ==========================================
+
+*.log
+logs/
+npm-debug.log*
+yarn-debug.log*
+pnpm-debug.log*
+
+tmp/
+temp/
+
+*.tmp
+*.bak
+*.old
+*.swp
+*.swo
+
+
+# ==========================================
+# 5. EDITORS & IDE CONFIGURATION
+# ==========================================
+
+.idea/
+*.iml
+
+.vscode/*
+!.vscode/extensions.json
+
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+.project
+.classpath
+.settings/
+
+
+# ==========================================
+# 6. OPERATING SYSTEM FILES
+# ==========================================
+
+.DS_Store
+.AppleDouble
+.LSOverride
+
+Thumbs.db
+ehthumbs.db
+desktop.ini
+
+$RECYCLE.BIN/
+
+
+# ==========================================
+# 7. DATABASE FILES & BACKUPS
+# ==========================================
+
+*.sqlite
+*.sqlite3
+*.db
+
+*.dump
+*.backup
+*.sql.bak
+
+
+# ==========================================
+# 8. TESTING & REPORTS
+# ==========================================
+
+test-results/
+playwright-report/
+playwright/.cache/
+
+reports/
+
+
+# ==========================================
+# 9. DOCUMENTATION BUILD OUTPUTS
+# ==========================================
+
+site/
+docs/_build/
+
+
+# ==========================================
+# 10. TOOL-SPECIFIC FILES
+# ==========================================
+
+.tsupgrader/
+```
+
+### My recommendations
+
+1. Keep your existing `frontend/.gitignore` unchanged.
+2. Use this root `.gitignore` for the complete AgriCycle repository.
+3. Keep `README.md`, `LICENSE`, source files, configuration files and dependency lockfiles tracked.
+4. Never commit actual passwords, API keys or database credentials.
+
+**One important note:** This configuration is technology-independent, but when your friend finalizes the backend stack, we can add any specific exclusions it requires.
+
+Now save the file and run:
+
+```cmd
+git add .
+git status
+```
+
+We'll review the files before making your first commit.
