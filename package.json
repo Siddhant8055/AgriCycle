@@ -1,0 +1,27 @@
+{
+  "name": "agricycle-root",
+  "version": "1.0.0",
+  "private": true,
+  "description": "AgriCycle - Crop Residue Valuation, Matching, and Farmer Decision Support Platform",
+  "scripts": {
+    "start": "npm --prefix backend start",
+    "dev": "npm --prefix backend run dev",
+    "dev:backend": "npm --prefix backend run dev",
+    "dev:frontend": "npm --prefix frontend run dev",
+    "test:frontend": "npm --prefix frontend run test",
+    "build:frontend": "npm --prefix frontend run build",
+    "db:view": "npm --prefix backend run db:view",
+    "db:migrate": "npm --prefix backend run db:migrate",
+    "db:status": "npm --prefix backend run db:status"
+  },
+  "keywords": [
+    "agricycle",
+    "agriculture",
+    "crop-residue",
+    "nrv",
+    "postgis",
+    "mern"
+  ],
+  "author": "AgriCycle Engineering Team",
+  "license": "ISC"
+}

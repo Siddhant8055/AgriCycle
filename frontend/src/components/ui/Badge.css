@@ -1,0 +1,114 @@
+/* ============================================================
+   Badge — AgriCycle
+   ============================================================ */
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-weight: 600;
+  border-radius: var(--radius-full);
+  white-space: nowrap;
+  letter-spacing: 0.01em;
+  transition: all var(--transition-fast);
+  line-height: 1;
+}
+
+/* Size variants */
+.badge-xs {
+  font-size: 10px;
+  padding: 2px 7px;
+}
+.badge-sm {
+  font-size: 11px;
+  padding: 3px 9px;
+}
+.badge-md {
+  font-size: var(--text-xs);
+  padding: 4px 12px;
+}
+.badge-lg {
+  font-size: var(--text-sm);
+  padding: 5px 14px;
+}
+
+/* Dot indicator */
+.badge-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: currentColor;
+  flex-shrink: 0;
+}
+
+/* ── Color variants ── */
+.badge-success {
+  background: #dcfce7;
+  color: #15803d;
+  border: 1px solid rgba(21,128,61,0.15);
+}
+.badge-warning {
+  background: #fef3c7;
+  color: #b45309;
+  border: 1px solid rgba(180,83,9,0.15);
+}
+.badge-danger {
+  background: #fee2e2;
+  color: #b91c1c;
+  border: 1px solid rgba(185,28,28,0.15);
+}
+.badge-info {
+  background: #e0f2fe;
+  color: #0369a1;
+  border: 1px solid rgba(3,105,161,0.15);
+}
+.badge-muted {
+  background: var(--agri-sage);
+  color: var(--agri-muted);
+  border: 1px solid var(--agri-border-light);
+}
+.badge-primary {
+  background: rgba(4,120,87,0.1);
+  color: var(--agri-green);
+  border: 1px solid rgba(4,120,87,0.2);
+}
+.badge-amber {
+  background: var(--agri-amber-light);
+  color: var(--agri-amber-dark);
+  border: 1px solid rgba(217,119,6,0.2);
+}
+.badge-forest {
+  background: rgba(23,75,52,0.1);
+  color: var(--agri-forest);
+  border: 1px solid rgba(23,75,52,0.15);
+}
+.badge-purple {
+  background: rgba(124,58,237,0.1);
+  color: #6d28d9;
+  border: 1px solid rgba(124,58,237,0.15);
+}
+
+/* ── Pulsing live dot (for active / online) ── */
+.badge-pulse .badge-dot {
+  position: relative;
+}
+.badge-pulse .badge-dot::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: currentColor;
+  animation: pulseDot 2s ease-out infinite;
+}
+
+/* ── Outline variant ── */
+.badge-outline {
+  background: transparent !important;
+}
+
+/* ── Uppercase ── */
+.badge-upper {
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  font-size: 10px;
+}

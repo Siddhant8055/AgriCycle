@@ -1,0 +1,243 @@
+/* ============================================================
+   ListingsPage — AgriCycle
+   ============================================================ */
+
+/* ── Page Header ── */
+.listings-page-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--space-4);
+  flex-wrap: wrap;
+}
+.listings-page-title {
+  font-size: var(--text-2xl);
+  font-weight: 800;
+  color: var(--agri-text);
+  letter-spacing: -0.03em;
+  margin-bottom: 2px;
+}
+.listings-page-sub {
+  font-size: var(--text-sm);
+  color: var(--agri-muted);
+}
+
+/* ── Stat cards row ── */
+.listings-stats-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: var(--space-4);
+}
+.listings-stat-card {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-4) var(--space-4);
+  background: var(--agri-card);
+  border-radius: var(--radius-card);
+  box-shadow: var(--shadow-card);
+  border: 1px solid var(--agri-border-light);
+  transition: all var(--transition-base);
+}
+.listings-stat-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--agri-border);
+}
+.listings-stat-icon {
+  width: 38px; height: 38px;
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: transform var(--transition-spring);
+}
+.listings-stat-card:hover .listings-stat-icon {
+  transform: scale(1.1) rotate(-3deg);
+}
+.stat-green   .listings-stat-icon { background: var(--agri-green-muted);   color: var(--agri-green); }
+.stat-success .listings-stat-icon { background: var(--agri-success-muted); color: var(--agri-success); }
+.stat-amber   .listings-stat-icon { background: var(--agri-amber-muted);   color: var(--agri-amber); }
+.stat-muted   .listings-stat-icon { background: var(--agri-sage);          color: var(--agri-muted); }
+
+.listings-stat-value {
+  font-size: var(--text-xl);
+  font-weight: 800;
+  color: var(--agri-text);
+  line-height: 1;
+  letter-spacing: -0.03em;
+  font-family: var(--font-display);
+}
+.listings-stat-label {
+  font-size: var(--text-xs);
+  color: var(--agri-muted);
+  margin-top: 2px;
+  font-weight: 500;
+}
+
+/* ── Filters bar ── */
+.listings-filters {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  flex-wrap: wrap;
+}
+.listings-search-wrap {
+  position: relative;
+  flex: 1;
+  min-width: 200px;
+}
+.listings-search-icon {
+  position: absolute;
+  left: 11px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--agri-muted);
+  pointer-events: none;
+  transition: color var(--transition-fast);
+  z-index: 1;
+}
+.listings-search-wrap:focus-within .listings-search-icon {
+  color: var(--agri-green);
+}
+.listings-search-input {
+  width: 100%;
+  padding: 9px 12px 9px 34px;
+  border: 1.5px solid var(--agri-border);
+  border-radius: var(--radius-md);
+  background: var(--agri-page);
+  font-size: var(--text-sm);
+  color: var(--agri-text);
+  transition: all var(--transition-fast);
+  font-family: var(--font-sans);
+  outline: none;
+}
+.listings-search-input:hover {
+  border-color: var(--agri-border-hover);
+  background: var(--agri-sage);
+}
+.listings-search-input:focus {
+  outline: none;
+  border-color: var(--agri-green);
+  box-shadow: var(--shadow-focus);
+  background: #fff;
+}
+.listings-search-input::placeholder { color: var(--agri-placeholder); }
+
+.listings-filter-select { min-width: 148px; }
+
+/* Demo notice */
+.listings-demo-notice {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: 9px var(--space-4);
+  background: var(--agri-amber-light);
+  border-radius: var(--radius-md);
+  font-size: var(--text-xs);
+  color: var(--agri-amber-dark);
+  border: 1px solid rgba(217,119,6,0.15);
+}
+
+/* Count */
+.listings-count {
+  font-size: var(--text-xs);
+  color: var(--agri-muted);
+  font-weight: 500;
+}
+
+/* ── Cards Grid ── */
+.listings-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
+  gap: var(--space-5);
+}
+
+/* ── Listing Card ── */
+.lc-card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+.lc-header {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-3);
+}
+.lc-emoji {
+  font-size: 1.75rem;
+  flex-shrink: 0;
+  width: 44px; height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--agri-sage);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--agri-border-light);
+}
+.lc-title-group { flex: 1; min-width: 0; }
+.lc-crop {
+  font-size: var(--text-base);
+  font-weight: 700;
+  color: var(--agri-text);
+  margin-bottom: 2px;
+  letter-spacing: -0.02em;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.lc-location {
+  font-size: var(--text-xs);
+  color: var(--agri-muted);
+}
+
+/* Detail grid */
+.lc-details {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-3);
+  padding: var(--space-3);
+  background: var(--agri-page);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--agri-border-light);
+}
+.lc-detail-item   { display: flex; flex-direction: column; gap: 2px; }
+.lc-detail-label  { font-size: 11px; color: var(--agri-muted); font-weight: 600; text-transform: uppercase; letter-spacing: 0.04em; }
+.lc-detail-value  { font-size: var(--text-sm); font-weight: 700; color: var(--agri-text); }
+.lc-price         { color: var(--agri-green); }
+.lc-buyers-active { color: var(--agri-info); }
+
+/* Actions */
+.lc-actions {
+  display: flex;
+  gap: var(--space-2);
+  padding-top: var(--space-2);
+  border-top: 1px solid var(--agri-border-light);
+  margin-top: auto;
+}
+
+/* ── Empty State ── */
+.listings-empty {
+  text-align: center;
+  padding: var(--space-10) var(--space-6);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-4);
+}
+.listings-empty-icon  { font-size: 3rem; animation: float 3s ease-in-out infinite; }
+.listings-empty h3    { font-size: var(--text-xl); color: var(--agri-text); }
+.listings-empty p     { font-size: var(--text-sm); color: var(--agri-muted); }
+
+/* ── Responsive ── */
+@media (max-width: 768px) {
+  .listings-page-header { flex-direction: column; }
+  .listings-stats-row   { grid-template-columns: 1fr 1fr; }
+  .listings-cards-grid  { grid-template-columns: 1fr; }
+  .listings-filter-select { flex: 1; }
+}
+
+@media (max-width: 480px) {
+  .listings-search-wrap { min-width: 100%; }
+}

@@ -1,0 +1,391 @@
+/* Stepper */
+.stepper {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  overflow-x: auto;
+  padding: 4px 0;
+}
+
+.step {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+.step-indicator {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 2px solid var(--agri-border);
+  background: var(--agri-card);
+  color: var(--agri-muted);
+  font-size: var(--text-xs);
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: all var(--transition-base);
+}
+
+.step.active .step-indicator {
+  background: var(--agri-green);
+  border-color: var(--agri-green);
+  color: #fff;
+  box-shadow: 0 0 0 4px rgba(4, 120, 87, 0.15);
+}
+
+.step.done .step-indicator {
+  background: var(--agri-success-light);
+  border-color: var(--agri-success);
+  color: var(--agri-success);
+}
+
+.step-label {
+  font-size: var(--text-sm);
+  font-weight: 600;
+  color: var(--agri-muted);
+  white-space: nowrap;
+}
+
+.step.active .step-label { color: var(--agri-green); }
+.step.done .step-label { color: var(--agri-success); }
+
+.step-sep {
+  color: var(--agri-border);
+  margin: 0 8px;
+  flex-shrink: 0;
+}
+
+/* Layout */
+.add-listing-layout {
+  display: grid;
+  grid-template-columns: 1fr 280px;
+  gap: 20px;
+  align-items: start;
+}
+
+.add-listing-main { display: flex; flex-direction: column; gap: 20px; }
+.add-listing-sidebar { display: flex; flex-direction: column; gap: 16px; }
+
+/* Form elements */
+.section-title {
+  font-size: var(--text-xl);
+  font-weight: 700;
+  color: var(--agri-text);
+  margin-bottom: 6px;
+}
+.section-desc {
+  font-size: var(--text-sm);
+  color: var(--agri-muted);
+  margin-bottom: 24px;
+  line-height: 1.6;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.input-group {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 8px;
+}
+
+/* Photo Upload */
+.upload-zone {
+  border: 2px dashed var(--agri-border);
+  border-radius: var(--radius-lg);
+  padding: 32px;
+  text-align: center;
+  cursor: pointer;
+  transition: all var(--transition-base);
+  background: var(--agri-page);
+  margin-bottom: 16px;
+}
+
+.upload-zone:hover {
+  border-color: var(--agri-green);
+  background: rgba(4, 120, 87, 0.03);
+}
+
+.upload-icon {
+  width: 56px;
+  height: 56px;
+  border-radius: var(--radius-lg);
+  background: var(--agri-sage);
+  color: var(--agri-green);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 12px;
+}
+
+.upload-title {
+  font-weight: 600;
+  color: var(--agri-text);
+  margin-bottom: 4px;
+  font-size: var(--text-sm);
+}
+
+.upload-hint {
+  font-size: var(--text-xs);
+  color: var(--agri-muted);
+}
+
+.photo-previews {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.photo-preview {
+  position: relative;
+  width: 90px;
+  height: 90px;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  border: 2px solid var(--agri-border);
+}
+
+.photo-preview img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.photo-remove {
+  position: absolute;
+  top: 4px;
+  right: 4px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: rgba(0,0,0,0.7);
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background var(--transition-fast);
+}
+
+.photo-remove:hover { background: var(--agri-danger); }
+
+/* AI Suggestion */
+.ai-suggestion {
+  background: linear-gradient(135deg, rgba(4,120,87,0.05), rgba(4,120,87,0.02));
+  border: 1px solid rgba(4, 120, 87, 0.2);
+  border-radius: var(--radius-lg);
+  padding: 20px;
+  margin-top: 16px;
+}
+
+.ai-suggestion-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 700;
+  color: var(--agri-forest);
+  font-size: var(--text-sm);
+  margin-bottom: 14px;
+}
+
+.ai-suggestion-body {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.ai-field {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.ai-field-label {
+  font-size: 11px;
+  color: var(--agri-muted);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.ai-field-value {
+  font-size: var(--text-sm);
+  font-weight: 700;
+  color: var(--agri-text);
+}
+
+.ai-note {
+  font-size: var(--text-xs);
+  color: var(--agri-text-secondary);
+  display: flex;
+  align-items: flex-start;
+  gap: 6px;
+  line-height: 1.5;
+  margin-bottom: 14px;
+}
+
+.ai-actions { display: flex; gap: 8px; }
+
+.ai-disclaimer {
+  display: flex;
+  align-items: flex-start;
+  gap: 6px;
+  margin-top: 16px;
+  font-size: var(--text-xs);
+  color: var(--agri-muted);
+  background: var(--agri-sage);
+  padding: 10px 12px;
+  border-radius: var(--radius-md);
+  line-height: 1.5;
+}
+
+/* Review */
+.review-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.review-field {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 14px;
+  background: var(--agri-page);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--agri-border-light);
+}
+
+.review-label {
+  font-size: 11px;
+  color: var(--agri-muted);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.review-value {
+  font-size: var(--text-sm);
+  font-weight: 600;
+  color: var(--agri-text);
+}
+
+.review-price {
+  color: var(--agri-green);
+  font-size: var(--text-base);
+  font-weight: 800;
+  font-family: var(--font-display);
+}
+
+.review-disclaimer {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  padding: 12px 14px;
+  background: var(--agri-info-light);
+  border: 1px solid rgba(3, 105, 161, 0.2);
+  border-radius: var(--radius-md);
+  font-size: var(--text-xs);
+  color: var(--agri-info);
+  line-height: 1.5;
+}
+
+/* Sidebar panels */
+.panel-title {
+  font-size: var(--text-sm);
+  font-weight: 700;
+  color: var(--agri-text);
+  margin-bottom: 12px;
+}
+
+.tips-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.tips-list li {
+  font-size: var(--text-xs);
+  color: var(--agri-text-secondary);
+  display: flex;
+  align-items: flex-start;
+  gap: 6px;
+  line-height: 1.4;
+}
+
+.tips-list li::before {
+  content: '✓';
+  color: var(--agri-green);
+  font-weight: 700;
+  flex-shrink: 0;
+  font-size: 12px;
+}
+
+.price-panel {
+  background: linear-gradient(135deg, var(--agri-forest-dark), var(--agri-forest));
+  border: none;
+  color: #fff;
+}
+
+.price-panel .panel-title { color: rgba(255,255,255,0.7); }
+
+.price-gross {
+  font-family: var(--font-display);
+  font-size: var(--text-3xl);
+  font-weight: 800;
+  color: #fff;
+  letter-spacing: -0.03em;
+  margin-bottom: 6px;
+}
+
+.price-note {
+  font-size: var(--text-xs);
+  color: rgba(255,255,255,0.6);
+  margin-bottom: 10px;
+  line-height: 1.4;
+}
+
+.price-disclaimer {
+  display: flex;
+  align-items: flex-start;
+  gap: 6px;
+  font-size: 11px;
+  color: rgba(255,255,255,0.5);
+  line-height: 1.4;
+}
+
+/* Navigation */
+.step-navigation {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  padding: 16px 0;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .add-listing-layout { grid-template-columns: 1fr; }
+  .add-listing-sidebar { display: grid; grid-template-columns: 1fr 1fr; }
+}
+
+@media (max-width: 640px) {
+  .form-grid { grid-template-columns: 1fr; }
+  .review-grid { grid-template-columns: 1fr; }
+  .stepper { gap: 4px; }
+  .step-label { display: none; }
+  .step.active .step-label { display: block; }
+  .add-listing-sidebar { grid-template-columns: 1fr; }
+}

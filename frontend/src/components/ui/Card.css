@@ -1,0 +1,180 @@
+/* ============================================================
+   Card — AgriCycle
+   ============================================================ */
+
+.card {
+  background: var(--agri-card);
+  border: 1px solid var(--agri-border-light);
+  border-radius: var(--radius-card);
+  box-shadow: var(--shadow-card);
+  transition:
+    box-shadow  var(--transition-base),
+    transform   var(--transition-base),
+    border-color var(--transition-base);
+}
+
+/* Padding variants */
+.card-pad-xs   { padding: 12px; }
+.card-pad-sm   { padding: 16px; }
+.card-pad-md   { padding: 24px; }
+.card-pad-lg   { padding: 32px; }
+.card-pad-xl   { padding: 40px; }
+.card-pad-none { padding: 0; }
+
+/* Hover elevation */
+.card-hover:hover {
+  box-shadow: var(--shadow-md);
+  transform: translateY(-2px);
+  border-color: var(--agri-border);
+}
+.card-hover:active {
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-sm);
+}
+
+/* Clickable */
+.card-clickable {
+  cursor: pointer;
+}
+.card-clickable:focus-visible {
+  outline: 2px solid var(--agri-green);
+  outline-offset: 2px;
+}
+
+/* Surface variant (slightly tinted) */
+.card-surface {
+  background: var(--agri-surface);
+}
+
+/* Bordered variant */
+.card-bordered {
+  border: 1.5px solid var(--agri-border);
+}
+
+/* ── CardHeader ── */
+.card-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--space-4);
+  margin-bottom: var(--space-5);
+}
+
+.card-header-action {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.card-title {
+  font-size: var(--text-base);
+  font-weight: 700;
+  color: var(--agri-text);
+  margin: 0;
+  letter-spacing: -0.02em;
+  line-height: var(--leading-snug);
+}
+
+.card-subtitle {
+  font-size: var(--text-xs);
+  color: var(--agri-muted);
+  margin-top: 3px;
+  line-height: var(--leading-normal);
+}
+
+/* Divider between header and body */
+.card-header-divider {
+  margin-bottom: var(--space-5);
+  padding-bottom: var(--space-4);
+  border-bottom: 1px solid var(--agri-border-light);
+}
+
+/* ── StatCard ── */
+.stat-card {
+  overflow: hidden;
+  position: relative;
+}
+
+/* Gradient top accent bar */
+.stat-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--agri-green), var(--agri-green-light));
+  border-radius: var(--radius-card) var(--radius-card) 0 0;
+}
+
+.stat-card-amber::before  { background: linear-gradient(90deg, var(--agri-amber), #f59e0b); }
+.stat-card-blue::before   { background: linear-gradient(90deg, var(--agri-info), #0ea5e9); }
+.stat-card-red::before    { background: linear-gradient(90deg, var(--agri-danger), #ef4444); }
+.stat-card-purple::before { background: linear-gradient(90deg, #7c3aed, #a78bfa); }
+
+.stat-card-inner {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--space-4);
+}
+
+.stat-card-content { flex: 1; }
+
+.stat-label {
+  font-size: var(--text-xs);
+  font-weight: 600;
+  color: var(--agri-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  margin-bottom: var(--space-2);
+}
+
+.stat-value {
+  font-size: var(--text-3xl);
+  font-weight: 800;
+  color: var(--agri-text);
+  font-family: var(--font-display);
+  letter-spacing: -0.04em;
+  line-height: 1;
+  margin-bottom: var(--space-2);
+}
+
+.stat-trend {
+  font-size: var(--text-xs);
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+.trend-up      { color: var(--agri-success); }
+.trend-down    { color: var(--agri-danger); }
+.trend-neutral { color: var(--agri-muted); }
+
+.stat-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-lg);
+  background: var(--agri-green-muted);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--agri-green);
+  flex-shrink: 0;
+  transition: transform var(--transition-spring);
+}
+
+.stat-card:hover .stat-icon {
+  transform: scale(1.08) rotate(-3deg);
+}
+
+/* Color variants for stat icon */
+.stat-card-amber  .stat-icon { background: var(--agri-amber-muted);   color: var(--agri-amber); }
+.stat-card-blue   .stat-icon { background: var(--agri-info-muted);    color: var(--agri-info); }
+.stat-card-red    .stat-icon { background: var(--agri-danger-muted);  color: var(--agri-danger); }
+.stat-card-purple .stat-icon { background: rgba(124,58,237,0.1);      color: #7c3aed; }
+
+/* ── Responsive ── */
+@media (max-width: 480px) {
+  .card-pad-md { padding: 18px; }
+  .card-pad-lg { padding: 20px; }
+}

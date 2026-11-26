@@ -1,0 +1,233 @@
+/* ============================================================
+   Button — AgriCycle
+   ============================================================ */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  border: none;
+  border-radius: var(--radius-md);
+  font-family: var(--font-sans);
+  font-weight: 600;
+  cursor: pointer;
+  transition:
+    background     var(--transition-fast),
+    color          var(--transition-fast),
+    border-color   var(--transition-fast),
+    box-shadow     var(--transition-fast),
+    transform      var(--transition-fast),
+    opacity        var(--transition-fast);
+  text-decoration: none;
+  white-space: nowrap;
+  position: relative;
+  letter-spacing: -0.01em;
+  outline: none;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Focus ring */
+.btn:focus-visible {
+  outline: 2px solid var(--agri-green);
+  outline-offset: 2px;
+}
+
+/* Disabled */
+.btn:disabled,
+.btn[aria-disabled='true'] {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none !important;
+  box-shadow: none !important;
+  pointer-events: none;
+}
+
+/* ── Size variants ── */
+.btn-xs {
+  height: 28px;
+  padding: 0 10px;
+  font-size: var(--text-xs);
+  gap: 5px;
+  border-radius: var(--radius-sm);
+}
+
+.btn-sm {
+  height: 34px;
+  padding: 0 14px;
+  font-size: var(--text-xs);
+  gap: 6px;
+  border-radius: var(--radius-sm);
+}
+
+.btn-md {
+  height: 42px;
+  padding: 0 20px;
+  font-size: var(--text-sm);
+}
+
+.btn-lg {
+  height: 50px;
+  padding: 0 28px;
+  font-size: var(--text-base);
+  gap: 9px;
+  border-radius: var(--radius-lg);
+}
+
+.btn-xl {
+  height: 58px;
+  padding: 0 36px;
+  font-size: var(--text-lg);
+  gap: 10px;
+  border-radius: var(--radius-lg);
+}
+
+.btn-full { width: 100%; }
+
+.btn-icon-only {
+  padding: 0;
+  aspect-ratio: 1;
+  justify-content: center;
+}
+.btn-icon-only.btn-sm { width: 34px; }
+.btn-icon-only.btn-md { width: 42px; }
+.btn-icon-only.btn-lg { width: 50px; }
+
+/* ── Color variants ── */
+
+/* Primary — green */
+.btn-primary {
+  background: linear-gradient(135deg, var(--agri-green) 0%, var(--agri-green-hover) 100%);
+  color: #fff;
+  box-shadow: 0 1px 3px rgba(4,120,87,0.25), 0 1px 2px rgba(4,120,87,0.15);
+}
+.btn-primary:hover:not(:disabled) {
+  background: linear-gradient(135deg, var(--agri-green-light) 0%, var(--agri-green) 100%);
+  box-shadow: 0 4px 14px rgba(4,120,87,0.35), 0 2px 4px rgba(4,120,87,0.2);
+  transform: translateY(-1px);
+}
+.btn-primary:active:not(:disabled) {
+  transform: translateY(0);
+  box-shadow: 0 1px 3px rgba(4,120,87,0.25);
+}
+
+/* Secondary — sage/grey */
+.btn-secondary {
+  background: var(--agri-sage);
+  color: var(--agri-forest);
+  border: 1.5px solid var(--agri-border);
+}
+.btn-secondary:hover:not(:disabled) {
+  background: var(--agri-sage-dark);
+  border-color: var(--agri-border-hover);
+  color: var(--agri-text);
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-sm);
+}
+.btn-secondary:active:not(:disabled) {
+  transform: translateY(0);
+  box-shadow: none;
+}
+
+/* Outline */
+.btn-outline {
+  background: transparent;
+  color: var(--agri-green);
+  border: 1.5px solid var(--agri-green);
+}
+.btn-outline:hover:not(:disabled) {
+  background: var(--agri-green-muted);
+  transform: translateY(-1px);
+  box-shadow: 0 0 0 1px var(--agri-green);
+}
+.btn-outline:active:not(:disabled) {
+  transform: translateY(0);
+  box-shadow: none;
+}
+
+/* Ghost */
+.btn-ghost {
+  background: transparent;
+  color: var(--agri-text-secondary);
+  border: 1.5px solid transparent;
+}
+.btn-ghost:hover:not(:disabled) {
+  background: var(--agri-sage);
+  color: var(--agri-text);
+  border-color: var(--agri-border-light);
+}
+
+/* Danger */
+.btn-danger {
+  background: linear-gradient(135deg, var(--agri-danger) 0%, #9b1c1c 100%);
+  color: #fff;
+  box-shadow: 0 1px 3px rgba(180,35,24,0.25);
+}
+.btn-danger:hover:not(:disabled) {
+  background: linear-gradient(135deg, #c0392b 0%, var(--agri-danger) 100%);
+  box-shadow: 0 4px 12px rgba(180,35,24,0.35);
+  transform: translateY(-1px);
+}
+.btn-danger:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+/* White */
+.btn-white {
+  background: #fff;
+  color: var(--agri-forest);
+  border: 1.5px solid var(--agri-border);
+  box-shadow: var(--shadow-sm);
+}
+.btn-white:hover:not(:disabled) {
+  background: var(--agri-sage);
+  border-color: var(--agri-border-hover);
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-md);
+}
+
+/* Forest / dark */
+.btn-forest {
+  background: var(--agri-forest);
+  color: #fff;
+  box-shadow: 0 1px 3px rgba(23,75,52,0.25);
+}
+.btn-forest:hover:not(:disabled) {
+  background: var(--agri-forest-dark);
+  box-shadow: 0 4px 14px rgba(23,75,52,0.35);
+  transform: translateY(-1px);
+}
+
+/* ── Spinner ── */
+.btn-spinner {
+  width: 15px;
+  height: 15px;
+  border: 2px solid rgba(255,255,255,0.35);
+  border-top-color: #fff;
+  border-radius: 50%;
+  animation: spin 0.65s linear infinite;
+  flex-shrink: 0;
+}
+
+.btn-secondary .btn-spinner,
+.btn-outline   .btn-spinner,
+.btn-ghost     .btn-spinner {
+  border-color: rgba(4,120,87,0.25);
+  border-top-color: var(--agri-green);
+}
+
+.btn-white .btn-spinner {
+  border-color: rgba(23,75,52,0.2);
+  border-top-color: var(--agri-forest);
+}
+
+/* ── Icons ── */
+.btn-icon {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.btn-icon-left  { margin-right: -1px; }
+.btn-icon-right { margin-left: -1px; }

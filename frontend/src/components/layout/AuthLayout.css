@@ -1,0 +1,273 @@
+/* ============================================================
+   AuthLayout — AgriCycle
+   ============================================================ */
+
+.auth-layout {
+  display: flex;
+  min-height: 100vh;
+}
+
+/* ── Brand Panel ── */
+.auth-brand {
+  flex: 0 0 44%;
+  background: linear-gradient(
+    160deg,
+    var(--agri-forest-dark)  0%,
+    var(--agri-forest)       45%,
+    var(--agri-forest-light) 100%
+  );
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  padding: 48px 52px;
+}
+
+/* Background pattern */
+.auth-brand::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    radial-gradient(ellipse at 80% 10%, rgba(52,211,153,0.07) 0%, transparent 50%),
+    radial-gradient(ellipse at 20% 90%, rgba(52,211,153,0.05) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+.auth-brand-content {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  animation: slideInLeft 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Decorative circles */
+.auth-brand-circle {
+  position: absolute;
+  border-radius: 50%;
+  border: 1px solid rgba(255,255,255,0.05);
+}
+.auth-brand-circle-1 {
+  width: 520px; height: 520px;
+  top: -140px; right: -190px;
+  background: radial-gradient(circle, rgba(52,211,153,0.03), transparent 70%);
+}
+.auth-brand-circle-2 {
+  width: 300px; height: 300px;
+  bottom: 50px; right: -90px;
+}
+.auth-brand-circle-3 {
+  width: 200px; height: 200px;
+  top: 42%; left: -70px;
+}
+
+/* Logo */
+.auth-brand-logo {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 44px;
+}
+.auth-brand-icon {
+  width: 50px; height: 50px;
+  background: rgba(52,211,153,0.15);
+  border: 1px solid rgba(52,211,153,0.25);
+  border-radius: var(--radius-lg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #6ee7b7;
+  box-shadow: 0 0 20px rgba(52,211,153,0.1);
+}
+.auth-brand-name {
+  display: block;
+  font-family: var(--font-display);
+  font-size: var(--text-2xl);
+  font-weight: 800;
+  color: #fff;
+  letter-spacing: -0.04em;
+}
+.auth-brand-tagline {
+  display: block;
+  font-size: 11px;
+  color: rgba(255,255,255,0.45);
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-top: 2px;
+}
+
+/* Hero illustration */
+.auth-brand-hero {
+  position: relative;
+  height: 160px;
+  margin: 20px 0 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.auth-brand-illustration {
+  position: relative;
+  text-align: center;
+}
+.auth-field-icon {
+  font-size: 80px;
+  line-height: 1;
+  display: block;
+  animation: float 4s ease-in-out infinite;
+  filter: drop-shadow(0 12px 28px rgba(0,0,0,0.3));
+}
+.auth-field-glow {
+  position: absolute;
+  bottom: -16px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 110px; height: 20px;
+  background: radial-gradient(ellipse, rgba(52,211,153,0.5), transparent 70%);
+  border-radius: 50%;
+  animation: pulse 4s ease-in-out infinite;
+}
+
+/* Headline */
+.auth-brand-headline {
+  font-family: var(--font-display);
+  font-size: var(--text-3xl);
+  font-weight: 800;
+  color: #fff;
+  line-height: 1.18;
+  letter-spacing: -0.03em;
+  margin-bottom: 14px;
+}
+.auth-brand-body {
+  font-size: var(--text-sm);
+  color: rgba(255,255,255,0.62);
+  line-height: var(--leading-relaxed);
+  margin-bottom: 28px;
+  max-width: 360px;
+}
+
+/* Features */
+.auth-brand-features {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 36px;
+}
+.auth-brand-feature {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: rgba(255,255,255,0.78);
+  font-size: var(--text-sm);
+  font-weight: 500;
+}
+.auth-brand-feature-icon {
+  width: 30px; height: 30px;
+  background: rgba(52,211,153,0.12);
+  border: 1px solid rgba(52,211,153,0.2);
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #6ee7b7;
+  flex-shrink: 0;
+}
+
+/* Stats bar */
+.auth-brand-stats {
+  display: flex;
+  align-items: center;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.09);
+  border-radius: var(--radius-lg);
+  padding: 16px 24px;
+  backdrop-filter: blur(4px);
+}
+.auth-stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1;
+  gap: 2px;
+}
+.auth-stat-value {
+  font-family: var(--font-display);
+  font-size: var(--text-xl);
+  font-weight: 800;
+  color: #fff;
+  letter-spacing: -0.03em;
+}
+.auth-stat-label {
+  font-size: 11px;
+  color: rgba(255,255,255,0.45);
+  font-weight: 500;
+}
+.auth-stat-divider {
+  width: 1px; height: 36px;
+  background: rgba(255,255,255,0.1);
+  margin: 0 8px;
+  flex-shrink: 0;
+}
+
+/* ── Form Panel ── */
+.auth-form-panel {
+  flex: 1;
+  background: var(--agri-card);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 48px 48px;
+  overflow-y: auto;
+}
+.auth-form-inner {
+  width: 100%;
+  max-width: 420px;
+  animation: slideInRight 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.auth-form-header {
+  margin-bottom: 32px;
+}
+.auth-form-title {
+  font-family: var(--font-display);
+  font-size: var(--text-3xl);
+  font-weight: 800;
+  color: var(--agri-text);
+  letter-spacing: -0.03em;
+  margin-bottom: 8px;
+  line-height: var(--leading-tight);
+}
+.auth-form-subtitle {
+  color: var(--agri-muted);
+  font-size: var(--text-sm);
+  line-height: var(--leading-relaxed);
+}
+
+/* ── Responsive ── */
+@media (max-width: 1024px) {
+  .auth-brand { padding: 40px 36px; }
+  .auth-form-panel { padding: 40px 32px; }
+}
+
+@media (max-width: 860px) {
+  .auth-layout { flex-direction: column; }
+  .auth-brand {
+    flex: none;
+    padding: 28px 24px;
+    min-height: 220px;
+  }
+  .auth-brand-logo { margin-bottom: 24px; }
+  .auth-brand-hero { height: 60px; margin: 8px 0 16px; }
+  .auth-field-icon { font-size: 44px; }
+  .auth-brand-headline { font-size: var(--text-xl); margin-bottom: 8px; }
+  .auth-brand-body { font-size: var(--text-xs); margin-bottom: 0; display: none; }
+  .auth-brand-features { display: none; }
+  .auth-brand-stats { display: none; }
+  .auth-form-panel { padding: 32px 28px; align-items: flex-start; padding-top: 36px; }
+}
+
+@media (max-width: 480px) {
+  .auth-brand { padding: 24px 20px; min-height: 180px; }
+  .auth-form-panel { padding: 24px 20px; }
+  .auth-form-title { font-size: var(--text-2xl); }
+}

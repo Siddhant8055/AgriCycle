@@ -1,0 +1,251 @@
+/* ============================================================
+   SettingsPage — Farmer & Buyer shared — AgriCycle
+   ============================================================ */
+
+/* ── Page Header ── */
+.settings-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--space-4);
+  flex-wrap: wrap;
+}
+.settings-title {
+  font-size: var(--text-2xl);
+  font-weight: 800;
+  color: var(--agri-text);
+  letter-spacing: -0.03em;
+  margin-bottom: 2px;
+}
+.settings-sub { font-size: var(--text-sm); color: var(--agri-muted); }
+
+/* ── Success Banner ── */
+.settings-saved-banner {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-3) var(--space-4);
+  background: var(--agri-success-light);
+  border: 1px solid rgba(21,128,61,0.2);
+  border-radius: var(--radius-md);
+  font-size: var(--text-sm);
+  color: var(--agri-success);
+  font-weight: 600;
+  animation: fadeIn 0.3s ease;
+}
+
+/* ── Layout ── */
+.settings-layout {
+  display: grid;
+  grid-template-columns: 1fr 240px;
+  gap: var(--space-5);
+  align-items: start;
+}
+.settings-main {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+}
+
+/* ── Avatar Row ── */
+.settings-avatar-row {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  padding-bottom: var(--space-5);
+  margin-bottom: var(--space-5);
+  border-bottom: 1px solid var(--agri-border-light);
+}
+.settings-avatar {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--agri-green-light), var(--agri-forest));
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  font-size: var(--text-2xl);
+  flex-shrink: 0;
+  box-shadow: 0 4px 16px rgba(4,120,87,0.3);
+  border: 3px solid rgba(255,255,255,0.8);
+  letter-spacing: -0.04em;
+}
+.settings-avatar-name {
+  font-size: var(--text-lg);
+  font-weight: 800;
+  color: var(--agri-text);
+  letter-spacing: -0.02em;
+}
+.settings-avatar-role {
+  font-size: var(--text-sm);
+  color: var(--agri-muted);
+  margin-top: 2px;
+}
+
+/* ── Form Grid ── */
+.settings-form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-4);
+  margin-top: var(--space-4);
+}
+
+/* ── Password show toggle ── */
+.show-pass-btn {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  background: none;
+  border: none;
+  color: var(--agri-muted);
+  font-size: var(--text-xs);
+  cursor: pointer;
+  margin-top: var(--space-3);
+  font-family: var(--font-sans);
+  font-weight: 500;
+  transition: color var(--transition-fast);
+  padding: 0;
+}
+.show-pass-btn:hover { color: var(--agri-green); }
+
+/* ── Notification toggles ── */
+.notif-list {
+  display: flex;
+  flex-direction: column;
+  margin-top: var(--space-4);
+}
+.notif-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-3) 0;
+  border-bottom: 1px solid var(--agri-border-light);
+  gap: var(--space-4);
+}
+.notif-row:last-child { border-bottom: none; }
+.notif-label {
+  font-size: var(--text-sm);
+  color: var(--agri-text);
+  font-weight: 500;
+  flex: 1;
+}
+.notif-label-desc {
+  font-size: var(--text-xs);
+  color: var(--agri-muted);
+  margin-top: 1px;
+}
+
+/* Toggle switch */
+.notif-toggle {
+  position: relative;
+  width: 44px;
+  height: 24px;
+  border-radius: 12px;
+  border: none;
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: background var(--transition-base);
+  outline: none;
+}
+.notif-toggle:focus-visible {
+  box-shadow: var(--shadow-focus);
+}
+.notif-toggle.on  { background: var(--agri-green); }
+.notif-toggle.off { background: var(--agri-border); }
+
+.notif-thumb {
+  position: absolute;
+  top: 3px;
+  width: 18px; height: 18px;
+  border-radius: 50%;
+  background: #fff;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.25);
+  transition: left var(--transition-base);
+}
+.notif-toggle.on  .notif-thumb { left: 23px; }
+.notif-toggle.off .notif-thumb { left: 3px; }
+
+/* ── Sidebar panel ── */
+.settings-sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  position: sticky;
+  top: calc(var(--topbar-height) + var(--space-5));
+}
+.settings-side-title {
+  font-size: var(--text-sm);
+  font-weight: 700;
+  color: var(--agri-text);
+  margin-bottom: var(--space-3);
+  letter-spacing: -0.01em;
+}
+.settings-side-desc {
+  font-size: var(--text-xs);
+  color: var(--agri-muted);
+  line-height: var(--leading-relaxed);
+}
+
+/* Account status */
+.account-status {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+.status-item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: var(--text-sm);
+  color: var(--agri-text);
+  font-weight: 500;
+}
+.status-dot {
+  width: 10px; height: 10px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+.status-dot.active {
+  background: var(--agri-success);
+  box-shadow: 0 0 0 3px rgba(21,128,61,0.2);
+}
+.status-dot.pending {
+  background: var(--agri-amber);
+  box-shadow: 0 0 0 3px rgba(217,119,6,0.2);
+}
+.status-dot.inactive {
+  background: var(--agri-muted);
+}
+
+/* Danger zone */
+.settings-danger-zone {
+  border: 1px solid rgba(180,35,24,0.2);
+  border-radius: var(--radius-card);
+  padding: var(--space-5);
+  background: var(--agri-danger-light);
+}
+.settings-danger-title {
+  font-size: var(--text-sm);
+  font-weight: 700;
+  color: var(--agri-danger);
+  margin-bottom: var(--space-2);
+}
+.settings-danger-desc {
+  font-size: var(--text-xs);
+  color: var(--agri-danger);
+  opacity: 0.8;
+  margin-bottom: var(--space-4);
+  line-height: var(--leading-relaxed);
+}
+
+/* ── Responsive ── */
+@media (max-width: 900px) {
+  .settings-layout     { grid-template-columns: 1fr; }
+  .settings-sidebar    { order: -1; position: static; }
+  .settings-form-grid  { grid-template-columns: 1fr; }
+}
+@media (max-width: 640px) {
+  .settings-header { flex-direction: column; }
+}
